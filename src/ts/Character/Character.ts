@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/consistent-type-imports */
-import { CharacterDataStructure, CharacterStructure } from "../types";
+import { type CharacterDataStructure, type CharacterStructure } from "../types";
 
 export class Character implements CharacterStructure {
   public isAlive = true;
