@@ -8,6 +8,9 @@ module.exports = {
     {
       extends: ["xo-typescript", "prettier"],
       files: ["*.ts", "*.tsx"],
+      rules: {
+        "consistent-type-definitions": 0,
+      },
     },
   ],
   parserOptions: {
