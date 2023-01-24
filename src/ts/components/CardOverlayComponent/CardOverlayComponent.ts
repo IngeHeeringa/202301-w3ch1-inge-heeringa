@@ -1,0 +1,59 @@
+import { Advisor } from "../../classes/Advisor/Advisor";
+import type Character from "../../classes/Character/Character";
+import { Fighter } from "../../classes/Fighter/Fighter";
+import { King } from "../../classes/King/King";
+import { Squire } from "../../classes/Squire/Squire";
+
+interface CardOverlayComponentStructure {
+  element: Element;
+}
+
+class CardOverlayComponent implements CardOverlayComponentStructure {
+  element: Element;
+  character: Character;
+
+  constructor(
+    parentElement: Element,
+    tagName: string,
+    className: string,
+    character: Character
+  ) {
+    this.element = document.createElement(tagName);
+    this.element.className = className;
+    parentElement.appendChild(this.element);
+    this.character = character;
+
+    this.render();
+  }
+
+  render() {
+    if (this.character instanceof King) {
+      this.element.innerHTML = `
+      <ul class="list-unstyled">
+      <li>Years of Reign: ${this.character.yearsOfReign}</li>
+      </ul>
+      `;
+    } else if (this.character instanceof Fighter) {
+      this.element.innerHTML = `
+      <ul class="list-unstyled">
+      <li>Weapon: ${this.character.weapon}</li>
+      <li>Dexterity: ${this.character.dexterity}</li>
+      </ul>
+      `;
+    } else if (this.character instanceof Squire) {
+      this.element.innerHTML = `
+      <ul class="list-unstyled">
+      <li>Kiss Ass level: ${this.character.kissAssLevel}</li>
+      <li>Advises to: ${this.character.serves.characterData.name}</li>
+      </ul>
+      `;
+    } else if (this.character instanceof Advisor) {
+      this.element.innerHTML = `
+      <ul class="list-unstyled">
+      <li>Serves to: ${this.character.advises.characterData.name}</li>
+      </ul>`;
+    }
+  }
+}
+
+export default CardOverlayComponent;

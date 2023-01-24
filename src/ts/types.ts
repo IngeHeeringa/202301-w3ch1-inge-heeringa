@@ -1,3 +1,6 @@
+import type Character from "./classes/Character/Character";
+import { type Fighter } from "./classes/Fighter/Fighter";
+
 export interface CharacterDataStructure {
   name: string;
   family: string;
@@ -15,4 +18,18 @@ export interface CharacterStructure {
 
 export interface KingStructure extends CharacterStructure {
   yearsOfReign: number;
+}
+
+export interface FighterStructure extends CharacterStructure {
+  weapon: string;
+  dexterity: number;
+}
+
+export interface SquireStructure extends CharacterStructure {
+  serves: Fighter;
+  kissAssLevel: number;
+}
+
+export interface AdvisorStructure extends CharacterStructure {
+  advises: Character;
 }

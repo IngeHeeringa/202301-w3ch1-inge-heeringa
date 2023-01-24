@@ -1,5 +1,7 @@
 import type Character from "../../classes/Character/Character";
-import Component from "../Component/Component";
+import CardBodyComponent from "../CardBodyComponent/CardBodyComponent";
+import CardOverlayComponent from "../CardOverlayComponent/CardOverlayComponent";
+import ImageComponent from "../ImageComponent/ImageComponent";
 
 interface CardComponentStructure {
   element: Element;
@@ -8,16 +10,39 @@ interface CardComponentStructure {
 class CardComponent implements CardComponentStructure {
   element: Element;
 
-  constructor(parentElement: Element, tagName: string, className: string) {
+  constructor(
+    parentElement: Element,
+    secondParentElement: Element,
+    tagName: string,
+    className: string,
+    character: Character
+  ) {
     this.element = document.createElement(tagName);
     this.element.className = className;
-    parentElement.appendChild(this.element);
+    secondParentElement.appendChild(this.element);
+    parentElement.appendChild(secondParentElement);
 
-    this.render();
-  }
-
-  render() {
-    return this.element;
+    const photo = new ImageComponent(
+      this.element,
+      "img",
+      "character__picture card-img-top",
+      character
+    );
+    const body = new CardBodyComponent(
+      this.element,
+      "div",
+      "card-body",
+      character
+    );
+    const overlay = new CardOverlayComponent(
+      this.element,
+      "div",
+      "character__overlay",
+      character
+    );
+    this.element.appendChild(photo.element);
+    this.element.appendChild(body.element);
+    this.element.appendChild(overlay.element);
   }
 }
 
