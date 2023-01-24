@@ -1,5 +1,5 @@
-import { joffrey } from ".";
+import { bronn, daenerys, jaime, joffrey, tyrion } from ".";
 
-const characters = [joffrey];
+const characters = [jaime, joffrey, daenerys, tyrion, bronn];
 
 export default characters;
