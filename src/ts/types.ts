@@ -33,3 +33,19 @@ export interface SquireStructure extends CharacterStructure {
 export interface AdvisorStructure extends CharacterStructure {
   advises: Character;
 }
+
+export interface CardComponentStructure {
+  element: Element;
+}
+
+export interface ImageComponentStructure {
+  element: Element;
+}
+
+export interface CardBodyComponentStructure {
+  element: Element;
+}
+
+export interface CardOverlayComponentStructure {
+  element: Element;
+}

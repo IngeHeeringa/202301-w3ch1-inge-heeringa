@@ -3,10 +3,7 @@ import type Character from "../../classes/Character/Character";
 import { Fighter } from "../../classes/Fighter/Fighter";
 import { King } from "../../classes/King/King";
 import { Squire } from "../../classes/Squire/Squire";
-
-interface CardOverlayComponentStructure {
-  element: Element;
-}
+import { type CardOverlayComponentStructure } from "../../types";
 
 class CardOverlayComponent implements CardOverlayComponentStructure {
   element: Element;
