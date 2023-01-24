@@ -3,6 +3,7 @@ import { type CharacterDataStructure } from "./types";
 import CardComponent from "./components/CardComponent/CardComponent";
 import ImageComponent from "./components/ImageComponent/ImageComponent";
 import joffreyPhoto from "../img/joffrey.jpg";
+import CardBodyComponent from "./components/CardBodyComponent/CardBodyComponent";
 
 const appContainer = document.querySelector(".app")!;
 const cardContainer = document.createElement("ul");
@@ -36,5 +37,13 @@ const imageComponent = new ImageComponent(
   joffrey
 );
 
+const cardBodyComponent = new CardBodyComponent(
+  card,
+  "div",
+  "card-body",
+  joffrey
+);
+
 cardComponent.render();
 imageComponent.render();
+cardBodyComponent.render();
