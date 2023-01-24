@@ -1,8 +1,5 @@
 import { type Character } from "../../classes/Character/Character";
-
-interface ImageComponentStructure {
-  element: Element;
-}
+import { type ImageComponentStructure } from "../../types";
 
 class ImageComponent implements ImageComponentStructure {
   element: Element;
@@ -16,8 +13,9 @@ class ImageComponent implements ImageComponentStructure {
     this.element = document.createElement(tagName);
     this.element.className = className;
     parentElement.appendChild(this.element);
-    (this.element as HTMLImageElement).src =
-      character.characterData.imageSource;
+    const htmlImageElement = this.element as HTMLImageElement;
+    htmlImageElement.src = character.characterData.imageSource;
+    htmlImageElement.alt = `${character.characterData.name} ${character.characterData.family}`;
 
     this.render();
   }

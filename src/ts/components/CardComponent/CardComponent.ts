@@ -1,12 +1,8 @@
 import type Character from "../../classes/Character/Character";
+import { type CardComponentStructure } from "../../types";
 import CardBodyComponent from "../CardBodyComponent/CardBodyComponent";
 import CardOverlayComponent from "../CardOverlayComponent/CardOverlayComponent";
 import ImageComponent from "../ImageComponent/ImageComponent";
-
-interface CardComponentStructure {
-  element: Element;
-}
-
 class CardComponent implements CardComponentStructure {
   element: Element;
 

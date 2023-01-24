@@ -1,8 +1,5 @@
 import type Character from "../../classes/Character/Character";
-
-interface CardBodyComponentStructure {
-  element: Element;
-}
+import { type CardBodyComponentStructure } from "../../types";
 
 class CardBodyComponent implements CardBodyComponentStructure {
   element: Element;
