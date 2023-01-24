@@ -1,4 +1,7 @@
-import { type CharacterDataStructure, type CharacterStructure } from "../types";
+import {
+  type CharacterDataStructure,
+  type CharacterStructure,
+} from "../../types";
 
 export class Character implements CharacterStructure {
   public isAlive = true;
@@ -14,3 +17,5 @@ export class Character implements CharacterStructure {
     this.isAlive = false;
   }
 }
+
+export default Character;
