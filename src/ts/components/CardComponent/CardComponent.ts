@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
+import type Character from "../../classes/Character/Character";
+import Component from "../Component/Component";
+
 interface CardComponentStructure {
   element: Element;
 }
